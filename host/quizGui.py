@@ -69,8 +69,8 @@ class SerialHandler:
 
 def setPin(mc, name):
     global teamList, buttonThread, abortButtonThread
-    mc.clearPin()
     while True:
+        mc.clearPin()
         pin = int.from_bytes(mc.getPinOnce(), 'big')
         if pin != 123:            
             success=True
@@ -200,7 +200,7 @@ def adjustPoints(adjbtn):
 
 abort = False
 def question(mc,window, btn_game, btn_adj):
-    global abort, lastTeamAnswered
+    global abort, lastTeamAnswered, questionThread
     mc.clearPin()  
     
     while True:
@@ -241,6 +241,7 @@ def question(mc,window, btn_game, btn_adj):
             break
 
     mc.clearPin()
+    questionThread = None
 
 
 questionThread = None
@@ -273,7 +274,7 @@ if __name__ == "__main__":
 
     window = tk.Tk()
     window.geometry("700x310")
-    window.title("Digitaltechnik Quiz")
+    window.title("Digitaltechnik Jeopardy")
 
     # window.
 
