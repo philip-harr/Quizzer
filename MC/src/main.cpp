@@ -1,11 +1,11 @@
 #include <Arduino.h>
 
-#define QUIZ_PIN0 8
-#define QUIZ_PIN1 22
-#define QUIZ_PIN2 24
-#define QUIZ_PIN3 26
-#define QUIZ_PIN4 28
-#define QUIZ_PIN5 30
+#define QUIZ_PIN0 51
+#define QUIZ_PIN1 49
+#define QUIZ_PIN2 47
+#define QUIZ_PIN3 45
+#define QUIZ_PIN4 43
+#define QUIZ_PIN5 41
 
 #define NO_PIN 0x7b
 
