@@ -42,7 +42,7 @@ class SerialHandler:
         device = "/dev/ttyUSB0"
         while True:
             if os.path.exists(device):
-                self.ser = serial.Serial("/dev/ttyUSB0", 500000, timeout=1)
+                self.ser = serial.Serial(device, 500000, timeout=1)
                 self.ser.read_all()
                 break
             else:
@@ -527,7 +527,7 @@ def abort_btn_func():
     on_question_event("abort")
 
 if __name__ == "__main__":
-
+    mc = SerialHandler()
 
     window = tk.Tk()
     window.title("Digitaltechnik Jeopardy")
@@ -561,6 +561,5 @@ if __name__ == "__main__":
     abortBtn = tk.Button(window, text="Abort!", command= lambda: abort_btn_func(), font=("Roboto", 18), state="disabled")
     abortBtn.place(x=btnxcorr, y=y_questions+250, height=50, width=btnwidth)
 
-    mc = SerialHandler()
     window.mainloop()
     mc.cleanup()
